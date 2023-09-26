@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WebWizardry Movie House</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styleHome.css">
+    <script src="https://kit.fontawesome.com/0ff92343ae.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="first-section" id="home">
+      <div class="navbar">
+        <div class="nav-left">
+          <h3>WebWizardry Movie House</h3>
+        </div>
+        <div class="nav-right">
+          <a onclick="scrollToSection('home')" class="active">Home</a>
+          <a onclick="scrollToSection('explore')">Explore</a>
+          <a onclick="scrollToSection('aboutus')"> About</a>
+        </div>
+      </div>
+      <div class="content">
+        <h1 class="head">WebWizardry Movie House</h1>
+      </div>
+      <div class="searchBar">
+        <div class="input-wrapper">
+          <button class="icon"> 
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
+              <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
+              <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
+            </svg>
+          </button>
+          <input placeholder="search.." class="search" name="text" type="text" id="searchInput">
+        </div>
+        <h1>OR</h1>
+        <div class="filterBox">
+          <button onclick="applyFilters()">Apply filters</button>
+          <form class="filters" id="filters">
+            <label><input type="checkbox" value="horror" id="horror" class="genre"> Horror </label>        
+            <label><input type="checkbox" value="fantasy" id="fantasy" class="genre"> Fantasy </label>        
+            <label><input type="checkbox" value="action" id="action" class="genre"> Action </label>
+            <label><input type="checkbox" value="romance" id="romance" class="genre"> Romance </label>
+            <label><input type="checkbox" value="thriller" id="thriller" class="genre"> Thriller </label>
+            <label><input type="checkbox" value="sci-fi" id="sci-fi" class="genre"> Sci-Fi </label>
+            <label><input type="checkbox" value="comedy" id="comedy" class="genre"> Comedy </label>
+            <br>
+            <div id="filterSubmit">Apply</div>
+          </form>
+        </div>
+      </div>
+      <div class="subText">
+        <h2>Explore Movies</h2>
+      </div>
+      <div class="clickme">
+        <button onclick="scrollToSection('explore')"><i class="fa-sharp fa-solid fa-arrow-down"></i></button>
+      </div>
+    </div>
+    <div class="exploreBar">
+      <h3>Sort</h3>
+      <ul class="midNav">
+        <li id="Byalpha">Sort Alphabetically</li>
+        <li id="Byrating">Sort by Rating</li>
+        <li id="Byyear">
+          <label for="yearRange">Select Year Range:</label>
+          <select id="yearRange">
+            <option value="2000-2022">2000-2012</option>
+            <option value="2000-2010">2010-2020</option>
+            <option value="2011-2022">2020-2023</option>
+          </select>
+        </li>
+        <li id="reset">Reset Sorting</li>
+      </ul>
+    </div>
+    <div class="second-section" id="explore">
+      <div class="cards" id="cards" category="fantasy" name="avatar">
+        <img src="assests/avatar.jpg">
+        <div class="description" id="description">
+          <h3>Avatar (<span id="year">2009</span>)</h3>
+          <h5>Rating <span class="rate">7.9</span></h5>
+          <p><b>Summary: </b>A paraplegic Marine dispatched to the moon Pandora on a unique 
+            mission becomes torn between following his orders and protecting 
+            the world he feels is his home.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="fantasy" name="barbie">
+        <img src="assests/barbie.jpg">
+        <div class="description" id="description">
+          <h3>Barbie (<span id="year">2009</span>)</h3>
+          <h5>Rating <span class="rate">7.1</span></h5>
+          <p><b>Summary: </b>Barbie suffers a crisis that leads her to question 
+            her world and her existence.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="thriller" name="charlie">
+        <img src="assests/charlie.jpg">
+        <div class="description" id="description">
+          <h3>777 Charlie (<span id="year">2022</span>)</h3>
+          <h5>Rating <span class="rate">8.8</span></h5>
+          <p><b>Summary: </b>Dharma is stuck in a rut with his negative and lonely 
+            lifestyle and spends each day in the comfort of his loneliness. 
+            A pup named Charlie enters his life and gives him a new perspective 
+            towards it.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="horror" name="conjuring">
+        <img src="assests/conjuring.jpg">
+        <div class="description" id="description">
+          <h3>The Conjuring (<span id="year">2013</span>)</h3>
+          <h5>Rating <span class="rate">7.5</span></h5>
+          <p><b>Summary: </b>Paranormal investigators Ed and Lorraine Warren work 
+            to help a family terrorized by a dark presence in their farmhouse.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="action" name="dark knight">
+        <img src="assests/dark knight.jpg">
+        <div class="description" id="description">
+          <h3>The dark night (<span id="year">2008</span>)</h3>
+          <h5>Rating <span class="rate">9</span></h5>
+          <p><b>Summary: </b>When the menace known as the Joker wreaks havoc 
+            and chaos on the people of Gotham, Batman must accept one of the 
+            greatest psychological and physical tests of his ability to fight 
+            injustice.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="sci-fi" name="avengers endgame">
+        <img src="assests/endgame.jpg">
+        <div class="description" id="description">
+          <h3>Avengers: Endgame (<span id="year">2019</span>)</h3>
+          <h5>Rating <span class="rate">8.4</span></h5>
+          <p><b>Summary: </b>After the devastating events of Avengers: Infinity
+             War (2018), the universe is in ruins. With the help of remaining 
+             allies, the Avengers assemble once more in order to reverse Thanos' 
+             actions and restore balance to the universe.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="action" name="god father">
+        <img src="assests/god father.jpg">
+        <div class="description" id="description">
+          <h3>The God Father (<span id="year">1972</span>)</h3>
+          <h5>Rating <span class="rate">9.2</span></h5>
+          <p><b>Summary: </b>Don Vito Corleone, head of a mafia family, decides
+             to hand over his empire to his youngest son Michael. However, 
+             his decision unintentionally puts the lives of his loved ones 
+             in grave danger.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="fantasy" name="harry potter">
+        <img src="assests/harry potter.jpg">
+        <div class="description" id="description">
+          <h3>Harry potter and the sorcerer's stone (<span id="year">2001</span>)</h3>
+          <h5>Rating <span class="rate">7.6</span></h5>
+          <p><b>Summary: </b>An orphaned boy enrolls in a school of wizardry, where he learns the truth about himself, his family and the terrible evil that haunts the magical world.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category='sci-fi' name="inception">
+        <img src="assests/inception.jpg">
+        <div class="description" id="description">
+          <h3>Inception (<span id="year">2010</span>)</h3>
+          <h5>Rating <span class="rate">8.8</span></h5>
+          <p><b>Summary: </b>A thief who steals corporate secrets through the use 
+            of dream-sharing technology is given the inverse task of planting an
+            idea into the mind of a C.E.O., but his tragic past may doom the 
+            project and his team to disaster.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="sci-fi" name="interstellar">
+        <img src="assests/interstellar.jpg">
+        <div class="description" id="description">
+          <h3>Intersteller (<span id="year">2014</span>)</h3>
+          <h5>Rating <span class="rate">8.7</span></h5>
+          <p><b>Summary: </b>When Earth becomes uninhabitable in the future, a 
+            farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a 
+            spacecraft, along with a team of researchers, to find a new planet
+             for humans.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="action" name="jawan">
+        <img src="assests/jawan.jpg">
+        <div class="description" id="description">
+          <h3>Jawan (<span id="year">2023</span>)</h3>
+          <h5>Rating <span class="rate">7.6</span></h5>
+          <p><b>Summary: </b>A high-octane action thriller which outlines 
+            the emotional journey of a man who is set to rectify the wrongs 
+            in the society.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="action" name="joker">
+        <img src="assests/joker.jpg">
+        <div class="description" id="description">
+          <h3>Joker (<span id="year">2019</span>)</h3>
+          <h5>Rating <span class="rate">8.4</span></h5>
+          <p><b>Summary: </b>During the 1980's, a failed stand-up comedian is 
+            driven insane and turns to a life of crime and chaos in Gotham City
+             while becoming an infamous psychopathic crime figure.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="sci-fi" name="matrix">
+        <img src="assests/matrix.jpg">
+        <div class="description" id="description">
+          <h3>The Matrix (<span id="year">1999</span>)</h3>
+          <h5>Rating <span class="rate">8.7</span></h5>
+          <p><b>Summary: </b>When a beautiful stranger leads computer hacker 
+            Neo to a forbidding underworld, he discovers the shocking truth--
+            the life he knows is the elaborate deception of an evil cyber-
+            intelligence.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="horror" name="nun">
+        <img src="assests/nun.jpg">
+        <div class="description" id="description">
+          <h3>The Nun 2 (<span id="year">2023</span>)</h3>
+          <h5>Rating <span class="rate">5.9</span></h5>
+          <p><b>Summary: </b>1956 - France. A priest is murdered. An evil is 
+            spreading. The sequel to the worldwide smash hit follows Sister 
+            Irene as she once again comes face-to-face with Valak, 
+            the demon nun.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="action" name="oppenheimer">
+        <img src="assests/oppen.jpg">
+        <div class="description" id="description">
+          <h3>Oppenheimer  (<span id="year">2023</span>)</h3>
+          <h5>Rating <span class="rate">8.6</span></h5>
+          <p><b>Summary: </b>The story of American scientist, J. Robert 
+            Oppenheimer, and his role in the development of the atomic bomb.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="sci-fi" name="black panther">
+        <img src="assests/panther.jpg">
+        <div class="description" id="description">
+          <h3>Black Panther (<span id="year">2018</span>)</h3>
+          <h5>Rating <span class="rate">7.3</span></h5>
+          <p><b>Summary: </b>T'Challa, heir to the hidden but advanced kingdom 
+            of Wakanda, must step forward to lead his people into a new future
+             and must confront a challenger from his country's past.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="romance" name="sita ramam">
+        <img src="assests/sitaramam.jpg">
+        <div class="description" id="description">
+          <h3>Sita Ramam (<span id="year">2022</span>)</h3>
+          <h5>Rating <span class="rate">8.6</span></h5>
+          <p><b>Summary: </b>	An orphan soldier, Lieutenant Ram's life 
+            changes, after he gets a letter from a girl named Sita. He meets
+             her and love blossoms between them. When he comes back to his
+              camp in Kashmir,After he gets caught in jail, he sends a letter
+               to Sita which won't reach her.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="sci-fi" name="spider-man">
+        <img src="assests/spider.jpg">
+        <div class="description" id="description">
+          <h3>Spider-Man: Now Way Home (<span id="year">2021</span>)</h3>
+          <h5>Rating <span class="rate">8.2</span></h5>
+          <p><b>Summary: </b>With Spider-Man's identity now revealed, 
+            Peter asks Doctor Strange for help. When a spell goes wrong,
+             dangerous foes from other worlds start to appear, forcing
+              Peter to discover what it truly means to be Spider-Man.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="sci-fi" name="doctor strange">
+        <img src="assests/strange.jpg">
+        <div class="description" id="description">
+          <h3>Doctor Strange (<span id="year">2016</span>)</h3>
+          <h5>Rating <span class="rate">7.5</span></h5>
+          <p><b>Summary: </b>While on a journey of physical and 
+            spiritual healing, a brilliant neurosurgeon is drawn 
+            into the world of the mystic arts.</p>
+        </div>
+      </div>
+      <div class="cards" id="cards" category="romance" name="titanic">
+        <img src="assests/titanic.jpg">
+        <div class="description" id="description">
+          <h3>Titanic (<span id="year">1997</span>)</h3>
+          <h5>Rating <span class="rate">7.9</span></h5>
+          <p><b>Summary: </b>A seventeen-year-old aristocrat 
+            falls in love with a kind but poor artist aboard the 
+            luxurious, ill-fated R.M.S. Titanic.</p>
+        </div>
+      </div>
+    </div>
+    <div class="forth-section">
+      <div class="aboutus" id="aboutus">
+        <h1>ABOUT</h1>
+      </div>
+      <div class="about-detail">
+        <p>Welcome to the WebWizardry movie house.<br>
+          It contains all movies information about 20+ movies.<br>
+          You can search any movie by its name or year.<br>
+          You can also search based on your recommendations.<br>
+          We hope you enjoy our website!<br>
+          <br>Note: This website is made for educational purpose only.
+      </div>
+    </div>
+
+    <button onclick="topFunction()" class="myBtn" id="myBtn">
+      <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
+    <p class="text">Back to Top</p>
+    </button>
+
+    <!--Footer Section-->
+    <footer class="footer" id="about">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Social</h3>
+          <ul class="social-links">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: 123-456-7890</p>
+          <p>Address: Chandigarh University</p>
+        </div>
+        <div class="footer-section">
+          <h3>Links</h3>
+          <ul class="footer-links">
+            <li><a onclick="scrollToSection('home')">Home</a></li>
+            <li><a onclick="scrollToSection('explore')">Explore</a></li>
+            <li><a onclick="scrollToSection('aboutus')">About</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Your Company. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="scriptHome.js"></script>    
+  </body>
+</html>
